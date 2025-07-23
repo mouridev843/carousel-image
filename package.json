@@ -1,0 +1,20 @@
+{
+  "name": "carousel-image",
+  "version": "1.0.0",
+  "description": "Carousel d'images reutilisable",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mouridev843/carousel-image.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mouridev843/carousel-image/issues"
+  },
+  "homepage": "https://github.com/mouridev843/carousel-image#readme"
+}
