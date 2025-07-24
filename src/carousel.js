@@ -165,7 +165,9 @@ export default class Carousel {
   initPagination() {
     // Créer un conteneur pour les dots
     this.paginationContainer = document.createElement("div");
-    this.paginationContainer.classList.add("carousel-pagination");
+    this.paginationContainer.classList.add(
+      this.options.selectors.paginationContainer.replace(".", "")
+    );
 
     // Créer un dot pour chaque slide
     this.slides.forEach((_, i) => {
@@ -191,7 +193,9 @@ export default class Carousel {
 
   updatePagination() {
     if (!this.paginationContainer) return;
-    const dots = this.paginationContainer.querySelectorAll(".carousel-dot");
+    const dots = this.paginationContainer.querySelectorAll(
+      this.options.selectors.dot
+    );
 
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === this.index);

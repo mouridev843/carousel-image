@@ -1,8 +1,9 @@
 {
-  "name": "carousel-image",
+  "name": "@mouridev/carousel",
   "version": "1.0.0",
-  "description": "Carousel d'images reutilisable",
-  "main": "index.js",
+  "description": "Carousel reutilisable et personnalisable",
+  "main": "dist/carousel.js",
+  "style": "dist/carousel.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/mouridev843/carousel-image.git"
   },
-  "keywords": [],
+  "keywords": [
+    "carousel",
+    "image",
+    "slider",
+    "reusable",
+    "customizable"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mouridev843/carousel-image/issues"
   },

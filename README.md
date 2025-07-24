@@ -19,7 +19,7 @@ C'est un carousel léger, responsive, personnalisable et sans dépendance, déve
 ## 📦 Installation
 
 ```bash
-npm install simple-carousel-js
+npm install @mouridev/carousel
 ```
 
 ## Ou en incluant directement le script dans votre HTML
@@ -44,7 +44,7 @@ Vous pouvez utiliser cette structure HTML par defaut ci dessous:
 ```
 
 ```js
-import Carousel from "simple-carousel-js";
+import Carousel from "@mouridev/carousel";
 
 new Carousel({
   selector: ".carousel",
@@ -160,21 +160,28 @@ Voici la liste des variables que vous pouvez redéfinir :
 .carousel {
   position: relative;
   overflow: hidden;
+  ...;
 }
 
 .carousel-slide {
   width: 100%;
   flex-shrink: 0;
+  ...;
 }
 
-.carousel-,
 .carousel-pagination {
   position: absolute;
   z-index: 10;
+  ...;
 }
 /* Les animations sont contrôlées par la classe CSS : */
-.carousel--fade .carousel-slide {
-  transition: opacity 0.5s ease;
+.carousel-slide {
+  transform: none;
+  opacity: 0;
+}
+
+.carousel-slide.active {
+  opacity: 1;
 }
 ```
 
@@ -197,10 +204,10 @@ Support de plusieurs types d’animations (zoom, etc.)
 ## 🧑‍💻 Contribution
 
 ```bash
-git clone https://github.com/ton-nom/carousel.git
-cd carousel
+git clone https://github.com/mouridev843/carousel-image.git
+cd carousel-image
 npm install
-npm run dev
+
 ```
 
 Les contributions sont les bienvenues ! Créez une issue ou une pull request.
