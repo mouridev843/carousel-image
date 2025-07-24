@@ -7,6 +7,13 @@ export default class Carousel {
       interval: 3000, // 3 secondes entre chaque slide
       loop: false, // ne boucle pas par défaut
       animation: "slide", // type d’animation
+      selectors: {
+        slide: ".carousel-slide", // classe des slides
+        prevBtn: ".carousel-prev", // classe du bouton précédent
+        nextBtn: ".carousel-next", // classe du bouton suivant
+        dot: ".carousel-dot", // classe des dots de pagination
+        paginationContainer: ".carousel-pagination", // (facultatif pour le moment)
+      },
     };
 
     // 2. Fusionner avec les options passées par l'utilisateur
@@ -33,8 +40,7 @@ export default class Carousel {
 
   init() {
     // Récupérer les slides à l'intérieur du container
-    this.slides = this.container.querySelectorAll(".carousel-slide");
-
+    this.slides = this.container.querySelectorAll(this.options.selectors.slide);
     if (this.slides.length === 0) {
       throw new Error(
         "Carousel: Aucun slide trouvé (classe .carousel-slide attendue)"
@@ -113,8 +119,12 @@ export default class Carousel {
   }
 
   bindNavigationButtons() {
-    const prevBtn = this.container.querySelector(".carousel-prev");
-    const nextBtn = this.container.querySelector(".carousel-next");
+    const prevBtn = this.container.querySelector(
+      this.options.selectors.prevBtn
+    );
+    const nextBtn = this.container.querySelector(
+      this.options.selectors.nextBtn
+    );
 
     if (prevBtn) {
       prevBtn.addEventListener("click", () => this.showPrev());
@@ -160,7 +170,7 @@ export default class Carousel {
     // Créer un dot pour chaque slide
     this.slides.forEach((_, i) => {
       const dot = document.createElement("button");
-      dot.classList.add("carousel-dot");
+      dot.classList.add(this.options.selectors.dot.replace(".", ""));
       if (i === this.index) dot.classList.add("active");
 
       dot.setAttribute("data-index", i);
